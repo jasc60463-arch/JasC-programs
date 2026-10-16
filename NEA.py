@@ -1,3 +1,13 @@
+# toturial reference
+# https://www.youtube.com/watch?v=Wu7kTFZtM6I  
+# https://www.youtube.com/watch?v=YDpm73WjNISc	
+# https://pyautogui.readthedocs.io/en/latest/
+# https://pypi.org/project/keyboard/ 
+# https://www.w3schools.com/python/python_json.asp
+# https://www.w3schools.com/python/python_datetime.asp
+# https://www.w3schools.com/Python/ref_module_threading.asp
+# https://docs.python.org/3/library/threading.html
+
 import kivy
 from kivy.app import App
 from kivy.uix.popup import Popup
@@ -279,16 +289,18 @@ class Hand_Gesture_Frame(Screen):
     # called when the user click start
     def start_stop_hand_gesture(self) -> None:
         debug_display = not self.display
-        # if thread hand_gesture_function already running then exit this function
+
+        # iterate all existing threads
         for i in threading.enumerate():
+            # if thread hand_gesture_function already running then exit this function
             if "hand_gesture_function" in str(i):
-                return
+                return None
 
         global loading_hand_gesture
         loading_hand_gesture = True
 
         # start hand gesture detection
-        thread = threading.Thread(target = hand_gesture_function, args = (self.hand_gesture_callback, debug_display), daemon=True)
+        thread = threading.Thread(target = hand_gesture_function, args = (self.hand_gesture_callback, debug_display), daemon = True)
         thread.start()
         # pause the main thread to allow the sub thread to load
         a = 0
