@@ -1,7 +1,8 @@
 # reference
 # https://www.youtube.com/watch?v=1lN4L74BwWo
 # https://mediapipe.readthedocs.io/en/latest/solutions/hands.html
-
+# https://docs.python.org/3/library/threading.html
+# https://www.w3schools.com/Python/ref_module_threading.asp
 
 class Counter:
 

@@ -1,4 +1,6 @@
-
+# reference
+# https://pypi.org/project/pyvda/ 
+# https://pypi.org/project/appopener/ 	
 
 
 def switch_desktop(index : int) -> bool:
